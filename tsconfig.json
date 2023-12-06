@@ -1,11 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "ES5",
+    "module": "CommonJS",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": ".",
+    "noUnusedLocals": true, //쓰지않는 지역변수 있으면 에러내기
+    "noImplicitReturns": true, //함수에서 return 빼먹으면 에러내기
+    "noFallthroughCasesInSwitch": true, //switch문 이상하면 에러내기
+    "alwaysStrict": true, //자바스크립트 "use strict" 모드 켜기
+    "removeComments": true, //컴파일시 주석제거
+    "allowJs": true, // js 파일들 ts에서 import해서 쓸 수 있는지
+    "checkJs": true, // 일반 js 파일에서도 에러체크 여부
     "paths": {
       "*": ["node_modules/*"]
     }
