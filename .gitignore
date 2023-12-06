@@ -1,4 +1,4 @@
-mkcert
+/mkcert
 node_modules
 dist
 .idea
