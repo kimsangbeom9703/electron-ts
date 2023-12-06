@@ -2,10 +2,11 @@
 
 ## 개발 플로우
 ```txt
-    1. electron typescript 
-    2. express server
+    1. electron typescript -- success
+    2. express server -- success
     3. localhost https
-    4. file downloader        
+    4. express-generator
+    5. file downloader        
 ```
 
 ## 개발 이력

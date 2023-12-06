@@ -1,8 +1,11 @@
 import {app, BrowserWindow} from "electron";
 import * as path from "path";
-import './app/index';
+import { generateCertificates } from './modules/mkcert';
 
+import './app/index'; // webserver
 //app.commandLine.appendSwitch('ignore-certificate-errors', 'true');
+
+console.log(process.cwd())
 
 function createWindow() {
     // Create the browser window.
@@ -34,8 +37,8 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+    generateCertificates();
     createWindow();
-
     app.on("activate", function () {
         // On macOS it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.
