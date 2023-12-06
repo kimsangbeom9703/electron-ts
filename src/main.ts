@@ -1,8 +1,9 @@
 import {app, BrowserWindow} from "electron";
 import * as path from "path";
-import { generateCertificates } from './modules/mkcert';
+import {generateCertificates} from './modules/mkcert';
 
-import './app/index'; // webserver
+// import './app/index'; // webserver
+import './app/bin/www';
 //app.commandLine.appendSwitch('ignore-certificate-errors', 'true');
 
 console.log(process.cwd())
@@ -30,8 +31,8 @@ function createWindow() {
         });
     });
     // and load the index.html of the app.
-    mainWindow.loadFile(path.join(__dirname, "../views/index.html"));
-
+    // mainWindow.loadFile(path.join(__dirname, "../views/index.html"));
+    mainWindow.loadURL('https://127.0.0.1')
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
 }
