@@ -1,5 +1,8 @@
 import {app, BrowserWindow} from "electron";
 import * as path from "path";
+import './app/index';
+
+//app.commandLine.appendSwitch('ignore-certificate-errors', 'true');
 
 function createWindow() {
     // Create the browser window.
