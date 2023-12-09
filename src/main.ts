@@ -14,12 +14,11 @@ function createWindow() {
         width: 800,
         height: 1600,
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false, // contextIsolation이 꺼져있어야 CSP가 적용됨
-            sandbox: false, // contextIsolation이 꺼져있어야 sandbox가 꺼짐
-            webSecurity: true, // 필요에 따라 웹 보안 설정을 true로 유지
+            contextIsolation: true, // 웹 컨텍스트 격리
+            sandbox: true, // 웹 페이지를 격리된 환경에서 실행
+            webSecurity: true, // 웹 보안 유지
             preload: path.join(__dirname, 'preload.js') // 필요에 따라 preload 스크립트 추가
-        },
+        }
     });
     // 보안 정책 설정 - "unsafe-eval" 사용 안 함
     mainWindow.webContents.session.webRequest.onHeadersReceived((details, callback) => {
